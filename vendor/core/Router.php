@@ -2,6 +2,9 @@
 
 namespace vendor\core;
 
+use app\controllers;
+use app\controllers\MainController;
+
 /**
  * класс для построения маршрутов
  */
@@ -76,7 +79,6 @@ class Router
         return false;
     }
 
-
     /**
      * перенаправляет url по корректному маршруту
      * @param string $url входящий url
@@ -84,7 +86,7 @@ class Router
     public static function dispatch($url) {
         $url = self::removeQueryString($url);
         if (self::matchRoute($url)) {
-            $controller = 'app\\config\\' . self::$currentRoute['prefix'] . self::$currentRoute['controller'].'Controller';
+            $controller = 'app\\controllers\\' . self::$currentRoute['prefix'] . self::$currentRoute['controller'].'Controller';
             if(class_exists($controller)) {
                 $controllerObj = new $controller(self::$currentRoute);
                 $action = self::lowerCamelCase(self::$currentRoute['action']) . 'Action';

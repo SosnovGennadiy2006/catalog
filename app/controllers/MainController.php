@@ -1,11 +1,13 @@
 <?php
 
-use vendor\core\base\Controller;
+namespace app\controllers;
 
-class MainController extends Controller
+use app\models\Main;
+
+class MainController extends AppController
 {
-    public function __constructor($currentRoute)
+    public function indexAction()
     {
-        parent::__constructor($currentRoute);
+        $model = new Main();
     }
 }

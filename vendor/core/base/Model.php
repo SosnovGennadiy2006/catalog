@@ -12,7 +12,7 @@ abstract class Model
     /**
      * @var \PDO свойство для хранения объекта PDO
      */
-    protected $pdo;
+    protected $db;
 
     /**
      * @var string свойство для хранения имени таблицы
@@ -25,7 +25,8 @@ abstract class Model
     protected $primaryKey = 'id';
 
     public function __construct() {
-        $this->pdo = DB::instance();
+        $db = require ROOT . '/config/config_db.php';
+        $this->db = new DB($db['dsn'], $db['user'], $db['pass']);
     }
 
     /**
@@ -34,7 +35,7 @@ abstract class Model
      * @return bool
      */
     public function query($sql) {
-        return $this->pdo->execute($sql);
+        return $this->db->execute($sql);
     }
 
     /**
@@ -43,7 +44,7 @@ abstract class Model
      */
     public function findAll() {
         $sql = "SELECT * FROM {$this->table}";
-        return $this->pdo->query($sql);
+        return $this->db->query($sql);
     }
 
     /**
