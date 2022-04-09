@@ -4,7 +4,6 @@ namespace vendor\core;
 
 use PDO;
 
-
 class DB
 {
     protected $PDO;

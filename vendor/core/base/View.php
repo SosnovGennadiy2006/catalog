@@ -30,7 +30,7 @@ class View
      */
     public $scripts = [];
 
-    public static $meta = ['title' => '', 'desc' => '', 'keywords' => ''];
+    public $meta;
 
     public function __construct($currentRoute, $layout = '', $view = '') {
         $this->currentRoute = $currentRoute;
@@ -67,6 +67,7 @@ class View
                 if (!empty($this->scripts[0])) {
                     $scripts = $this->scripts[0];
                 }
+                $_meta = $this->meta;
                 require $file_layout;
             } else {
                 throw new \Exception("<p>Не найден шаблон <b>{$file_layout}</b></p>", 404);
@@ -87,15 +88,11 @@ class View
         return $content;
     }
 
-    public static function getMeta() {
-        echo '<title>' . self::$meta['title'] . '</title>
-              <meta name="description" content="'. self::$meta['desc'] .'">
-              <meta name="keywords" content="'. self::$meta['keywords'] .'">';
+    public function getMeta() {
+        echo $this->meta;
     }
 
-    public static function setMeta($title = '', $desc = '', $keywords = '') {
-        self::$meta['title'] = $title;
-        self::$meta['desc'] = $desc;
-        self::$meta['keywords'] = $keywords;
+    public function setMeta($newMeta) {
+        $this->meta = $newMeta;
     }
 }

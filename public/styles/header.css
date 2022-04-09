@@ -3,7 +3,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: var(--white, white);
+    background: var(--white, #FFFFFF);
     min-width: 100vw;
     padding: 10px 70px 10px 70px;
     font-family: Cuprum, Arial, Helvetica, sans-serif;
@@ -120,11 +120,13 @@ header {
 }
 
 .dws-menu li > ul li:first-child a {
-    border-radius: 5px 5px 0 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .dws-menu li > ul li:last-child a {
-    border-radius: 0 0 5px 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .dws-menu li > ul li ul {
