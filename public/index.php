@@ -17,6 +17,10 @@ function autoload($className)
 }
 
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
-Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
+Router::add('^main$', ['controller' => 'Main', 'action' => 'index']);
+Router::add('^index$', ['controller' => 'Main', 'action' => 'index']);
+
+Router::add('^authorization', ['controller' => 'Authorization', 'action' => 'index']);
+
 
 Router::dispatch($query);

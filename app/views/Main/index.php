@@ -1,6 +1,6 @@
 <header>
     <div class="MainInfo">
-        <img class="header-logo" src="/public/images/logo.png">
+        <img class="header-logo" src="/public/images/logo.png" draggable="false">
         <p class="header-website-name"><a href="#">MYSHOP</a></p>
     </div>
     <nav class="dws-menu">

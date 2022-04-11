@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\models\Main;
 use vendor\core\base\View;
 
-class MainController extends AppController
+class AuthorizationController extends AppController
 {
     public function indexAction()
     {
@@ -20,9 +20,9 @@ class MainController extends AppController
         $vObj = new View($this->currentRoute, $this->layout, $this->view);
         $vObj->setMeta("<link href=\"https://fonts.googleapis.com/css?family=Cuprum\" rel=\"stylesheet\">
     <link rel=\"stylesheet\" href=\"/public/styles/font-awesome.css\" type=\"text/css\">
-    <link rel=\"stylesheet\" href=\"/public/styles/header.css?v=".time()."\" type=\"text/css\">
+    <link rel=\"stylesheet\" href=\"/public/styles/authorization.css?v=".time()."\" type=\"text/css\">
     <link rel=\"stylesheet\" href=\"/public/styles/base.css?v=".time()."\" type=\"text/css\">
-    <title>Main page</title>");
+    <title>Authorization</title>");
         $vObj->render($this->data);
     }
 }
