@@ -1,0 +1,192 @@
+.mainWrapper
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: white;
+}
+
+.mainContainer
+{
+    display: inline-flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: var(--transperent-box-shadow);
+    background: white;
+    width: 500px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.selectButtons
+{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    min-height: 70px;
+    background: var(--white, #FFFFFF);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+.selectButtons:after
+{
+    content: "";
+    display: block;
+    background: var(--transperent-blue-200);
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: left 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.selectButtons.state1:after
+{
+    left: 0;
+}
+
+.selectButtons.state2:after
+{
+    left: 50%;
+}
+
+.selectButtons button
+{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 50%;
+    height: 100%;
+    border: none;
+    font-size: 18px;
+    color: var(--gray-300);
+    background: var(--white, #FFFFFF);
+    cursor: pointer;
+    transition: color 0.5s ease;
+    padding: 0;
+}
+
+.selectButtons button.active
+{
+    color: var(--blue-400);
+}
+
+.selectButtons button:hover
+{
+    color: var(--black);
+}
+
+.signUpButton
+{
+    border-left: 1px solid var(--gray-300) !important;
+}
+
+.mainPart
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.signInContainer
+{
+    left: 0;
+}
+
+.signUpContainer
+{
+    left: 100%;
+}
+
+.authorizationContainer
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+}
+
+.mainPart.state1 .signInContainer
+{
+    left: 0;
+}
+
+.mainPart.state1 .signUpContainer
+{
+    left: 100%;
+}
+
+.mainPart.state2 .signInContainer
+{
+    left: -100%;
+}
+
+.mainPart.state2 .signUpContainer
+{
+    left: 0;
+}
+
+.containerName
+{
+    color: var(--blue-200);
+    text-align: center;
+    font-size: 18px;
+}
+
+.flexInputContainer
+{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 0 5px 0;
+}
+
+.inputName
+{
+    color: var(--gray-300);
+    margin: 0;
+}
+
+.flexInputContainer input
+{
+    border: 1px solid var(--gray-300);
+    border-radius: 0;
+}
+
+.flexInputContainer input:hover
+{
+    border: 1px solid var(--blue-500);
+}
+
+.flexRight
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.submitButton
+{
+    margin: 0;
+    padding: 10px 20px;
+    border: none;
+    background: var(--blue-400);
+    color: var(--white);
+    transition: background 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submitButton:hover
+{
+    background: var(--blue-500);
+}

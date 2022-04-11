@@ -13,8 +13,8 @@
             </li>
             <li><a href="#"><i class="fa fa-user" style="margin-right: 5px;"></i></i>Аккаунт<i class="fa fa-angle-down" style="margin-left: 5px;"></i></a>
                 <ul>
-                    <li><a href="#">Войти</a></li>
-                    <li><a href="#">Регистрация</a></li>
+                    <li><a href="authorization">Войти</a></li>
+                    <li><a href="authorization">Регистрация</a></li>
                 </ul>
             </li>
         </ul>

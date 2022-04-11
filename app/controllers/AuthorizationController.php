@@ -22,6 +22,7 @@ class AuthorizationController extends AppController
     <link rel=\"stylesheet\" href=\"/public/styles/font-awesome.css\" type=\"text/css\">
     <link rel=\"stylesheet\" href=\"/public/styles/authorization.css?v=".time()."\" type=\"text/css\">
     <link rel=\"stylesheet\" href=\"/public/styles/base.css?v=".time()."\" type=\"text/css\">
+    <script src=\"/public/scripts/authorization.js?v=".time()."\" defer></script>
     <title>Authorization</title>");
         $vObj->render($this->data);
     }
