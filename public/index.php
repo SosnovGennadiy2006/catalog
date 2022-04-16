@@ -20,7 +20,8 @@ Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^main$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^index$', ['controller' => 'Main', 'action' => 'index']);
 
-Router::add('^authorization', ['controller' => 'Authorization', 'action' => 'index']);
+Router::add('^authorization$', ['controller' => 'Authorization', 'action' => 'index']);
 
+Router::add('^add_user$', ['controller' => 'Authorization', 'action' => 'addUser']);
 
 Router::dispatch($query);
