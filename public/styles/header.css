@@ -7,7 +7,7 @@ header {
     min-width: 100vw;
     padding: 10px 70px 10px 70px;
     font-family: Cuprum, Arial, Helvetica, sans-serif;
-    box-shadow: var(--transperent-box-shadow);
+    box-shadow: var(--transperent-box-shadow-wide);
 }
 
 .MainInfo

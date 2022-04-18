@@ -23,7 +23,7 @@ class MainController extends AppController
     <link rel=\"stylesheet\" href=\"/public/styles/font-awesome.css\" type=\"text/css\">
     <link rel=\"stylesheet\" href=\"/public/styles/header.css?v=".time()."\" type=\"text/css\">
     <link rel=\"stylesheet\" href=\"/public/styles/base.css?v=".time()."\" type=\"text/css\">
-    <title>Main page</title>");
+    <title>Главная страница</title>");
         $vObj->render($this->data);
     }
 }

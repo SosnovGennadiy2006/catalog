@@ -20,8 +20,10 @@ Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^main$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^index$', ['controller' => 'Main', 'action' => 'index']);
 
-Router::add('^authorization$', ['controller' => 'Authorization', 'action' => 'index']);
+Router::add('^signIn$', ['controller' => 'Authorization', 'action' => 'signIn']);
+Router::add('^signUp$', ['controller' => 'Authorization', 'action' => 'signUp']);
 
-Router::add('^add_user$', ['controller' => 'Authorization', 'action' => 'addUser']);
+Router::add('^registerUser$', ['controller' => 'Authorization', 'action' => 'registerUser']);
+Router::add('^signInUser$', ['controller' => 'Authorization', 'action' => 'signInUser']);
 
 Router::dispatch($query);

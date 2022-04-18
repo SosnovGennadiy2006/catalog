@@ -1,3 +1,8 @@
+:root {
+    --size-bezel: .5rem;
+    --size-radius: 4px;
+}
+
 .mainWrapper
 {
     display: inline-flex;
@@ -6,187 +11,125 @@
     min-width: 100vw;
     min-height: 100vh;
     background: white;
+
 }
 
 .mainContainer
 {
     display: inline-flex;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: 20px;
-    box-shadow: var(--transperent-box-shadow);
+    box-shadow: var(--transperent-box-shadow-wide);
     background: white;
     width: 500px;
     height: 600px;
     overflow: hidden;
+    padding: 20px;
 }
 
-.selectButtons
+.mainContent
 {
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.input
+{
     position: relative;
-    flex-direction: row;
-    min-height: 70px;
-    background: var(--white, #FFFFFF);
-    border-bottom: 1px solid var(--gray-300);
 }
 
-.selectButtons:after
+.input__label
 {
-    content: "";
-    display: block;
-    background: var(--transperent-blue-200);
     position: absolute;
-    width: 50%;
-    height: 100%;
+    left: 0;
     top: 0;
-    left: 0;
-    transition: left 0.3s ease-in-out;
-    pointer-events: none;
+    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: var(--white);
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
 }
 
-.selectButtons.state1:after
+.input__field
 {
-    left: 0;
-}
-
-.selectButtons.state2:after
-{
-    left: 50%;
-}
-
-.selectButtons button
-{
+    box-sizing: border-box;
     display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-width: 50%;
-    height: 100%;
-    border: none;
-    font-size: 18px;
-    color: var(--gray-300);
-    background: var(--white, #FFFFFF);
-    cursor: pointer;
-    transition: color 0.5s ease;
-    padding: 0;
+    width: 100%;
+    border: 3px solid currentColor;
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
 }
 
-.selectButtons button.active
+.input__field:not(:placeholder-shown) ~ .input__label,
+.input__field:focus ~ .input__label
 {
+    transform: translate(.25rem, -65%) scale(.8);
     color: var(--blue-400);
 }
 
-.selectButtons button:hover
-{
-    color: var(--black);
-}
-
-.signUpButton
-{
-    border-left: 1px solid var(--gray-300) !important;
-}
-
-.mainPart
-{
-    position: relative;
+.button-group {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    justify-content: flex-end;
+    margin-top: calc(var(--size-bezel) * 2.5);
 }
 
-.signInContainer
+.input + .input
 {
-    left: 0;
-}
-
-.signUpContainer
-{
-    left: 100%;
-}
-
-.authorizationContainer
-{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 20px;
-    transition: left 0.3s ease-in-out;
-}
-
-.mainPart.state1 .signInContainer
-{
-    left: 0;
-}
-
-.mainPart.state1 .signUpContainer
-{
-    left: 100%;
-}
-
-.mainPart.state2 .signInContainer
-{
-    left: -100%;
-}
-
-.mainPart.state2 .signUpContainer
-{
-    left: 0;
+    margin-top: calc(var(--size-bezel) * 2.5);
 }
 
 .containerName
 {
-    color: var(--blue-200);
-    text-align: center;
-    font-size: 18px;
+    color: var(--blue-400);
 }
 
-.flexInputContainer
+.customButton
 {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px 0 5px 0;
-}
-
-.inputName
-{
-    color: var(--gray-300);
-    margin: 0;
-}
-
-.flexInputContainer input
-{
-    border: 1px solid var(--gray-300);
-    border-radius: 0;
-}
-
-.flexInputContainer input:hover
-{
-    border: 1px solid var(--blue-500);
-}
-
-.flexRight
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-.submitButton
-{
-    margin: 0;
-    padding: 10px 20px;
+    border-radius: var(--size-radius);
     border: none;
-    background: var(--blue-400);
     color: var(--white);
+    background: var(--blue-400);
     transition: background 0.3s ease;
     cursor: pointer;
-    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 0.8em;
 }
 
-.submitButton:hover
+.customButton:hover
 {
     background: var(--blue-500);
+}
+
+.customButton[type="reset"]
+{
+    margin-left: var(--size-bezel);
+}
+
+.customLink
+{
+    margin: 0;
+    padding: 0;
+    text-align: end;
+    font-size: 1em;
+}
+
+.customLink a
+{
+    font-weight: bold;
+    color: var(--blue-300);
+    text-decoration: none;
+}
+
+.customLink a:hover
+{
+    color: var(--blue-500);
+    text-decoration: underline;
 }
