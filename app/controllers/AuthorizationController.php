@@ -18,7 +18,6 @@ class AuthorizationController extends AppController
     <link rel=\"stylesheet\" href=\"/public/styles/font-awesome.css\" type=\"text/css\">
     <link rel=\"stylesheet\" href=\"/public/styles/authorization.css?v=".time()."\" type=\"text/css\">
     <link rel=\"stylesheet\" href=\"/public/styles/base.css?v=".time()."\" type=\"text/css\">
-    <script src=\"/public/scripts/authorization.js?v=".time()."\" defer></script>
     <title>Вход</title>");
         $vObj->render($this->data);
     }
@@ -31,7 +30,7 @@ class AuthorizationController extends AppController
     <link rel=\"stylesheet\" href=\"/public/styles/font-awesome.css\" type=\"text/css\">
     <link rel=\"stylesheet\" href=\"/public/styles/authorization.css?v=".time()."\" type=\"text/css\">
     <link rel=\"stylesheet\" href=\"/public/styles/base.css?v=".time()."\" type=\"text/css\">
-    <script src=\"/public/scripts/authorization.js?v=".time()."\" defer></script>
+    <script src=\"/public/scripts/registration.js?v=".time()."\" defer></script>
     <title>Регистрация</title>");
         $vObj->render($this->data);
     }
@@ -61,8 +60,7 @@ class AuthorizationController extends AppController
         $login = trim($login);
         $password = trim($password);
         // подключаемся к базе
-        $db = require ROOT . '/config/config_db.php';
-        $db = new DB($db['dsn'], $db['user'], $db['pass']);
+        $db = DB::instance();
 
         // проверка на существование пользователя с таким же логином
         $stn = $db->prepare("SELECT id FROM users WHERE login='$login'");
@@ -99,8 +97,9 @@ class AuthorizationController extends AppController
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
             // подключаемся к базе
-            $db = require ROOT . '/config/config_db.php';
-            $db = new DB($db['dsn'], $db['user'], $db['pass']);
+
+            // подключаемся к базе
+            $db = DB::instance();
 
             $query = $db->prepare("SELECT id FROM users WHERE email = `$email`");
 

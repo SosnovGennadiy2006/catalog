@@ -6,13 +6,15 @@ use PDO;
 
 class DB
 {
+    use TSingleton;
     protected $PDO;
     public $numExecutes;
     public $numStatements;
 
-    public function __construct($dsn, $user = NULL, $pass = NULL, $driver_options = NULL)
+    public function __construct()
     {
-        $this->PDO = new PDO($dsn, $user, $pass, $driver_options);
+        $db = require ROOT . '/config/config_db.php';
+        $this->PDO = new PDO($db['dsn'], $db['user'], $db['pass']);
         $this->numExecutes = 0;
         $this->numStatements = 0;
     }
@@ -49,10 +51,5 @@ class DB
 
         $args = func_get_args();
         return call_user_func_array(array(&$this->PDO, 'exec'), $args);
-    }
-
-    public function instance()
-    {
-        return $this->PDO;
     }
 }

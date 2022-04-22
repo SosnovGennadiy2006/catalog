@@ -12,8 +12,11 @@ session_start();
                     <span class="input__label">Имя</span>
                 </label>
                 <label class="input">
-                    <input class="input__field" type="text" name="email" placeholder=" " required />
+                    <input class="input__field" id="email_input" type="text" name="email" placeholder=" " required />
                     <span class="input__label">Почта</span>
+                    <div class="input__error_text_wrapper">
+                        <span class="input__error_text">Ошибка!</span>
+                    </div>
                 </label>
                 <label class="input">
                     <input class="input__field" type="password" name="password" placeholder=" " required />

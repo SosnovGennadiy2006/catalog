@@ -24,10 +24,3 @@ session_start();
         </ul>
     </nav>
 </header>
-<?php
-
-use vendor\core\DB;
-
-// подключаемся к базе
-$db = require ROOT . '/config/config_db.php';
-$db = new DB($db['dsn'], $db['user'], $db['pass']);

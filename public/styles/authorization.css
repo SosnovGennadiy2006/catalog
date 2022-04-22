@@ -24,7 +24,7 @@
     background: white;
     width: 500px;
     height: 600px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     padding: 20px;
 }
 
@@ -37,6 +37,8 @@
 .input
 {
     position: relative;
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .input__label
@@ -72,6 +74,22 @@
 {
     transform: translate(.25rem, -65%) scale(.8);
     color: var(--blue-400);
+}
+
+.input__error_text_wrapper
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.input__error_text
+{
+    font-size: 14px;
+    color: var(--red-400);
 }
 
 .button-group {

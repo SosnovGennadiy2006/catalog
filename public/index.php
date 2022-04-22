@@ -1,5 +1,7 @@
 <?php
 
+use vendor\core\DB;
+
 require_once "../config/init.php";
 require_once CORE . '/Router.php';
 
@@ -24,6 +26,9 @@ Router::add('^signIn$', ['controller' => 'Authorization', 'action' => 'signIn'])
 Router::add('^signUp$', ['controller' => 'Authorization', 'action' => 'signUp']);
 
 Router::add('^registerUser$', ['controller' => 'Authorization', 'action' => 'registerUser']);
-Router::add('^signInUser$', ['controller' => 'Authorization', 'action' => 'signInUser']);
+Router::add('^signInUer$', ['controller' => 'Authorization', 'action' => 'signInUser']);
+
+Router::add('^xmlhttprequest/users/email/(?P<email_service>[0-9a-zA-Z.]+)/(?P<email>[0-9a-zA-Z\*\$.+-]+)',
+    ['controller' => 'AJAX', 'action' => 'userByEmail']);
 
 Router::dispatch($query);
